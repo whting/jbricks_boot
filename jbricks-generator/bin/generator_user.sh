@@ -1,0 +1,1 @@
+mvn -Dmybatis.generator.configurationFile=src/main/resources/generator/generator_user.xml mybatis-generator:generate

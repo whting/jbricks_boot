@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haoting.jbricks.sys.infrastructure.dao.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.haoting.jbricks.sys.infrastructure.dao.entity.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="gmt_created" jdbcType="TIMESTAMP" property="gmtCreated" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="app_id" jdbcType="INTEGER" property="appId" />
+    <result column="sub_type" jdbcType="INTEGER" property="subType" />
+    <result column="attributes" jdbcType="VARCHAR" property="attributes" />
+    <result column="options" jdbcType="VARCHAR" property="options" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="id_card_no" jdbcType="VARCHAR" property="idCardNo" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="age" jdbcType="SMALLINT" property="age" />
+  </resultMap>
+</mapper>
