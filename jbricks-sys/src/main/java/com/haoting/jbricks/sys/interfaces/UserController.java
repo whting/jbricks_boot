@@ -7,6 +7,8 @@ import com.haoting.jbricks.core.result.Response;
 import com.haoting.jbricks.sys.application.UserService;
 import com.haoting.jbricks.sys.application.dto.UserDTO;
 
+import java.util.List;
+
 /**
  * @author haoting.wang
  * @Date 2018/7/19
@@ -21,7 +23,7 @@ public class UserController {
 	@GetMapping("get_user/{userId}")
 	public Response<UserDTO> getUser(@PathVariable String userId){
 
-		UserDTO user = userService.getUserById(userId);
+		UserDTO user = userService.findUserById(userId);
 
 		return Response.success(user);
 	}

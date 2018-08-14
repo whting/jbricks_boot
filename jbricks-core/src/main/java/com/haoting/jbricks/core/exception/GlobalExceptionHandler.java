@@ -36,28 +36,28 @@ public class GlobalExceptionHandler {
         Response<String> res = new Response<String>();
         if (ex instanceof BusException) {
             EnumStatus enumStatus = ((BusException) ex).getStatus();
-            res.setStatus(enumStatus.getStatus());
+            res.setCode(enumStatus.getStatus());
             res.setMsg(enumStatus.getMsg());
             logger.warn("请求{}异常信息", request.getRequestURL(), ex);
         } else if (ex instanceof SystemException) {
             EnumStatus enumStatus = ((SystemException) ex).getStatus();
-            res.setStatus(enumStatus.getStatus());
+            res.setCode(enumStatus.getStatus());
             res.setMsg(enumStatus.getMsg());
             logger.error("请求{}异常信息", request.getRequestURL(), ex);
         } else if (ex instanceof MissingServletRequestParameterException) {
-            res.setStatus(StatusCode.PARAM_ERROR.getStatus());
+            res.setCode(StatusCode.PARAM_ERROR.getStatus());
             res.setMsg(StatusCode.PARAM_ERROR.getMsg());
             logger.warn("请求{}异常信息", request.getRequestURL(), ex);
         } else if (ex instanceof ServletRequestBindingException) {
-            res.setStatus(StatusCode.PARAM_ERROR.getStatus());
+            res.setCode(StatusCode.PARAM_ERROR.getStatus());
             res.setMsg(StatusCode.PARAM_ERROR.getMsg());
             logger.warn("请求{}异常信息", request.getRequestURL(), ex);
         } else if (ex instanceof IllegalArgumentException) {
-            res.setStatus(StatusCode.PARAM_ERROR.getStatus());
+            res.setCode(StatusCode.PARAM_ERROR.getStatus());
             res.setMsg(StatusCode.PARAM_ERROR.getMsg());
             logger.warn("请求{}异常信息", request.getRequestURL(), ex);
         } else {
-            res.setStatus(StatusCode.UNKNOW_ERROR.getStatus());
+            res.setCode(StatusCode.UNKNOW_ERROR.getStatus());
             res.setMsg(StatusCode.UNKNOW_ERROR.getMsg());
             logger.error("请求{}异常信息", request.getRequestURL(), ex);
         }

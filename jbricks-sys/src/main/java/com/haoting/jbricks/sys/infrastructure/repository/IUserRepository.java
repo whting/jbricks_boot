@@ -1,5 +1,6 @@
 package com.haoting.jbricks.sys.infrastructure.repository;
 
+import com.haoting.jbricks.sys.application.dto.UserDTO;
 import com.haoting.jbricks.sys.domain.model.User;
 
 /**
@@ -9,4 +10,6 @@ import com.haoting.jbricks.sys.domain.model.User;
 public interface IUserRepository {
 
     int addUser(User user);
+
+    UserDTO findUserById(String userId);
 }

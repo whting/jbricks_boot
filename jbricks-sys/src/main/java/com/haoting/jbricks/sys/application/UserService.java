@@ -14,7 +14,7 @@ public interface UserService {
      * @param userId
      * @return
      */
-    UserDTO getUserById(String userId);
+    UserDTO findUserById(String userId);
 
     /**
      * 新增用户

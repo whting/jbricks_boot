@@ -1,5 +1,9 @@
 package com.haoting.jbricks.sys.infrastructure.repository.translator;
 
+import com.haoting.jbricks.core.util.BeanCopierUtils;
+import com.haoting.jbricks.sys.application.dto.UserDTO;
+import com.haoting.jbricks.sys.infrastructure.dao.entity.UserEntity;
+
 /**
  * 将不同repository返回的entity翻译层domain层认识的model对象</br>
  * NOTE：通常情况下，我们可以直接使用domain层的model对象写入存储，这样就不需要translator存在了，比如demo中使用memory repository完成model的存取；
@@ -10,4 +14,11 @@ package com.haoting.jbricks.sys.infrastructure.repository.translator;
  * @Date 2018/7/22
  */
 public class UserRepositoryTranslator {
+
+    public static UserDTO fromPO(UserEntity userEntity) {
+
+        UserDTO userDTO = new UserDTO();
+        BeanCopierUtils.copyProperties(userEntity,userDTO);
+        return userDTO;
+    }
 }

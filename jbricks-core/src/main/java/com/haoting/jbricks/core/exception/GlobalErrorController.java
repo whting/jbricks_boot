@@ -51,7 +51,7 @@ public class GlobalErrorController implements ErrorController {
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
         response.setHeader("Cache-Control", "no-cache");
         Response<String> res = new Response<String>();
-        res.setStatus(StatusCode.NOT_FOUND_ERROR.getStatus());
+        res.setCode(StatusCode.NOT_FOUND_ERROR.getStatus());
         res.setMsg(StatusCode.NOT_FOUND_ERROR.getMsg());
         Map<String, Object> body = getErrorAttributes(request, isIncludeStackTrace(request, MediaType.ALL));
         logger.error("请求{}异常信息", request.getRequestURL(), JSON.toJSONString(body));
